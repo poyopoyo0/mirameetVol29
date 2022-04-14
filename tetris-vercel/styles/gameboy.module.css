@@ -1,0 +1,571 @@
+@font-face {
+  font-family: 'Pretendo';
+  src: url("../public/font/Pretendo.ttf") format("truetype"), url("../public/font/Pretendo.woff") format("woff"), url("../public/font/Pretendo.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* body {
+  background: #09cbe4;
+  font-family: 'Pretendo';
+} */
+
+input.btnOn,
+input.btnOff {
+  display: block;
+  margin: 0 auto;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+input.btnHide {
+  display: none;
+}
+
+.startScreen {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 101;
+  width: 225px;
+  height: 205px;
+  background: #061A1B;
+}
+
+.screenHeader {
+  background: #E3FED1;
+  width: calc(100% - 6px);
+  height: 60px;
+  margin: 10px auto 0;
+  border: 1px solid #E3FED1;
+}
+
+.screenHeaderInner {
+  border-top: 4px solid #C9E1B9;
+  border-right: 4px solid #C9E1B9;
+  border-bottom: 4px solid #061A1B;
+  border-left: 4px solid #C9E1B9;
+  height: calc(100% - 8px);
+}
+
+.screenHeaderInner h1 {
+  text-align: center;
+  margin-top: 9px;
+  font-size: 40px;
+}
+
+.screenHeaderInner small {
+  position: absolute;
+  right: 11px;
+  top: 20px;
+  font-size: 10px;
+}
+
+.screenHeaderTitle {
+  border: 2px solid #97A98B;
+  height: calc(100% - 4px);
+}
+
+.screenMoskva {
+  width: calc(100% - 18px);
+  height: 70px;
+  background: #B0C5A2;
+  margin: 0 auto 0;
+  border-top: 2px solid #B0C5A2;
+  position: relative;
+}
+
+.screenMoskva::before {
+  content: '';
+  width: 100%;
+  background: #7E8D74;
+  height: 2px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.screenMoskva::after {
+  content: '';
+  width: 100%;
+  background: #061A1B;
+  height: 2px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+.screenMoskva .moon {
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  position: absolute;
+  top: 15px;
+  left: 35px;
+}
+
+.screenMoskva .moon::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  -webkit-box-shadow: 6px 6px 0 transparent, 12px 6px 0 transparent, 18px 6px 0 transparent, 24px 6px 0 transparent, 30px 6px 0 #c9e1b9, 36px 6px 0 #c9e1b9, 42px 6px 0 transparent, 48px 6px 0 transparent, 54px 6px 0 transparent, 60px 6px 0 transparent, 6px 12px 0 transparent, 12px 12px 0 transparent, 18px 12px 0 #c9e1b9, 24px 12px 0 #c9e1b9, 30px 12px 0 #c9e1b9, 36px 12px 0 #c9e1b9, 42px 12px 0 #c9e1b9, 48px 12px 0 #c9e1b9, 54px 12px 0 transparent, 60px 12px 0 transparent, 6px 18px 0 transparent, 12px 18px 0 #c9e1b9, 18px 18px 0 #c9e1b9, 24px 18px 0 #c9e1b9, 30px 18px 0 #c9e1b9, 36px 18px 0 #c9e1b9, 42px 18px 0 #c9e1b9, 48px 18px 0 #c9e1b9, 54px 18px 0 #c9e1b9, 60px 18px 0 transparent, 6px 24px 0 #c9e1b9, 12px 24px 0 #c9e1b9, 18px 24px 0 #c9e1b9, 24px 24px 0 #c9e1b9, 30px 24px 0 #c9e1b9, 36px 24px 0 #c9e1b9, 42px 24px 0 #c9e1b9, 48px 24px 0 #c9e1b9, 54px 24px 0 #c9e1b9, 60px 24px 0 #c9e1b9, 6px 30px 0 #c9e1b9, 12px 30px 0 #c9e1b9, 18px 30px 0 #c9e1b9, 24px 30px 0 #c9e1b9, 30px 30px 0 #c9e1b9, 36px 30px 0 #c9e1b9, 42px 30px 0 #c9e1b9, 48px 30px 0 #c9e1b9, 54px 30px 0 #c9e1b9, 60px 30px 0 #c9e1b9, 6px 36px 0 #c9e1b9, 12px 36px 0 #c9e1b9, 18px 36px 0 #c9e1b9, 24px 36px 0 #c9e1b9, 30px 36px 0 #c9e1b9, 36px 36px 0 #c9e1b9, 42px 36px 0 #c9e1b9, 48px 36px 0 #c9e1b9, 54px 36px 0 #c9e1b9, 60px 36px 0 #c9e1b9, 6px 42px 0 #c9e1b9, 12px 42px 0 #c9e1b9, 18px 42px 0 #c9e1b9, 24px 42px 0 #c9e1b9, 30px 42px 0 #c9e1b9, 36px 42px 0 #c9e1b9, 42px 42px 0 #c9e1b9, 48px 42px 0 #c9e1b9, 54px 42px 0 #c9e1b9, 60px 42px 0 #c9e1b9, 6px 48px 0 transparent, 12px 48px 0 #c9e1b9, 18px 48px 0 #c9e1b9, 24px 48px 0 #c9e1b9, 30px 48px 0 #c9e1b9, 36px 48px 0 #c9e1b9, 42px 48px 0 #c9e1b9, 48px 48px 0 #c9e1b9, 54px 48px 0 #c9e1b9, 60px 48px 0 transparent, 6px 54px 0 transparent, 12px 54px 0 transparent, 18px 54px 0 #c9e1b9, 24px 54px 0 #c9e1b9, 30px 54px 0 #c9e1b9, 36px 54px 0 #c9e1b9, 42px 54px 0 #c9e1b9, 48px 54px 0 #c9e1b9, 54px 54px 0 transparent, 60px 54px 0 transparent, 6px 60px 0 transparent, 12px 60px 0 transparent, 18px 60px 0 transparent, 24px 60px 0 transparent, 30px 60px 0 #c9e1b9, 36px 60px 0 #c9e1b9, 42px 60px 0 transparent, 48px 60px 0 transparent, 54px 60px 0 transparent, 60px 60px 0 transparent;
+          box-shadow: 6px 6px 0 transparent, 12px 6px 0 transparent, 18px 6px 0 transparent, 24px 6px 0 transparent, 30px 6px 0 #c9e1b9, 36px 6px 0 #c9e1b9, 42px 6px 0 transparent, 48px 6px 0 transparent, 54px 6px 0 transparent, 60px 6px 0 transparent, 6px 12px 0 transparent, 12px 12px 0 transparent, 18px 12px 0 #c9e1b9, 24px 12px 0 #c9e1b9, 30px 12px 0 #c9e1b9, 36px 12px 0 #c9e1b9, 42px 12px 0 #c9e1b9, 48px 12px 0 #c9e1b9, 54px 12px 0 transparent, 60px 12px 0 transparent, 6px 18px 0 transparent, 12px 18px 0 #c9e1b9, 18px 18px 0 #c9e1b9, 24px 18px 0 #c9e1b9, 30px 18px 0 #c9e1b9, 36px 18px 0 #c9e1b9, 42px 18px 0 #c9e1b9, 48px 18px 0 #c9e1b9, 54px 18px 0 #c9e1b9, 60px 18px 0 transparent, 6px 24px 0 #c9e1b9, 12px 24px 0 #c9e1b9, 18px 24px 0 #c9e1b9, 24px 24px 0 #c9e1b9, 30px 24px 0 #c9e1b9, 36px 24px 0 #c9e1b9, 42px 24px 0 #c9e1b9, 48px 24px 0 #c9e1b9, 54px 24px 0 #c9e1b9, 60px 24px 0 #c9e1b9, 6px 30px 0 #c9e1b9, 12px 30px 0 #c9e1b9, 18px 30px 0 #c9e1b9, 24px 30px 0 #c9e1b9, 30px 30px 0 #c9e1b9, 36px 30px 0 #c9e1b9, 42px 30px 0 #c9e1b9, 48px 30px 0 #c9e1b9, 54px 30px 0 #c9e1b9, 60px 30px 0 #c9e1b9, 6px 36px 0 #c9e1b9, 12px 36px 0 #c9e1b9, 18px 36px 0 #c9e1b9, 24px 36px 0 #c9e1b9, 30px 36px 0 #c9e1b9, 36px 36px 0 #c9e1b9, 42px 36px 0 #c9e1b9, 48px 36px 0 #c9e1b9, 54px 36px 0 #c9e1b9, 60px 36px 0 #c9e1b9, 6px 42px 0 #c9e1b9, 12px 42px 0 #c9e1b9, 18px 42px 0 #c9e1b9, 24px 42px 0 #c9e1b9, 30px 42px 0 #c9e1b9, 36px 42px 0 #c9e1b9, 42px 42px 0 #c9e1b9, 48px 42px 0 #c9e1b9, 54px 42px 0 #c9e1b9, 60px 42px 0 #c9e1b9, 6px 48px 0 transparent, 12px 48px 0 #c9e1b9, 18px 48px 0 #c9e1b9, 24px 48px 0 #c9e1b9, 30px 48px 0 #c9e1b9, 36px 48px 0 #c9e1b9, 42px 48px 0 #c9e1b9, 48px 48px 0 #c9e1b9, 54px 48px 0 #c9e1b9, 60px 48px 0 transparent, 6px 54px 0 transparent, 12px 54px 0 transparent, 18px 54px 0 #c9e1b9, 24px 54px 0 #c9e1b9, 30px 54px 0 #c9e1b9, 36px 54px 0 #c9e1b9, 42px 54px 0 #c9e1b9, 48px 54px 0 #c9e1b9, 54px 54px 0 transparent, 60px 54px 0 transparent, 6px 60px 0 transparent, 12px 60px 0 transparent, 18px 60px 0 transparent, 24px 60px 0 transparent, 30px 60px 0 #c9e1b9, 36px 60px 0 #c9e1b9, 42px 60px 0 transparent, 48px 60px 0 transparent, 54px 60px 0 transparent, 60px 60px 0 transparent;
+}
+
+.screenMoskva .castle {
+  -webkit-transform: scale(0.47);
+          transform: scale(0.47);
+  position: absolute;
+  right: 90px;
+  top: 4px;
+}
+
+.screenMoskva .castle::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  -webkit-box-shadow: 10px 10px 0 transparent, 20px 10px 0 transparent, 30px 10px 0 transparent, 40px 10px 0 transparent, 50px 10px 0 transparent, 60px 10px 0 transparent, 70px 10px 0 #32382e, 80px 10px 0 #32382e, 90px 10px 0 transparent, 100px 10px 0 transparent, 110px 10px 0 transparent, 120px 10px 0 transparent, 130px 10px 0 transparent, 140px 10px 0 transparent, 10px 20px 0 transparent, 20px 20px 0 transparent, 30px 20px 0 transparent, 40px 20px 0 transparent, 50px 20px 0 transparent, 60px 20px 0 #32382e, 70px 20px 0 #c9e1b9, 80px 20px 0 #c9e1b9, 90px 20px 0 #32382e, 100px 20px 0 transparent, 110px 20px 0 transparent, 120px 20px 0 transparent, 130px 20px 0 transparent, 140px 20px 0 transparent, 10px 30px 0 transparent, 20px 30px 0 transparent, 30px 30px 0 transparent, 40px 30px 0 transparent, 50px 30px 0 transparent, 60px 30px 0 transparent, 70px 30px 0 #32382e, 80px 30px 0 #32382e, 90px 30px 0 transparent, 100px 30px 0 transparent, 110px 30px 0 transparent, 120px 30px 0 transparent, 130px 30px 0 transparent, 140px 30px 0 transparent, 10px 40px 0 transparent, 20px 40px 0 transparent, 30px 40px 0 transparent, 40px 40px 0 transparent, 50px 40px 0 transparent, 60px 40px 0 transparent, 70px 40px 0 #32382e, 80px 40px 0 #32382e, 90px 40px 0 transparent, 100px 40px 0 transparent, 110px 40px 0 transparent, 120px 40px 0 transparent, 130px 40px 0 transparent, 140px 40px 0 transparent, 10px 50px 0 transparent, 20px 50px 0 transparent, 30px 50px 0 transparent, 40px 50px 0 transparent, 50px 50px 0 transparent, 60px 50px 0 #32382e, 70px 50px 0 #32382e, 80px 50px 0 #32382e, 90px 50px 0 #32382e, 100px 50px 0 transparent, 110px 50px 0 transparent, 120px 50px 0 transparent, 130px 50px 0 transparent, 140px 50px 0 transparent, 10px 60px 0 transparent, 20px 60px 0 transparent, 30px 60px 0 transparent, 40px 60px 0 transparent, 50px 60px 0 #32382e, 60px 60px 0 #7e8d74, 70px 60px 0 #c9e1b9, 80px 60px 0 #7e8d74, 90px 60px 0 #c9e1b9, 100px 60px 0 #32382e, 110px 60px 0 transparent, 120px 60px 0 transparent, 130px 60px 0 transparent, 140px 60px 0 transparent, 10px 70px 0 transparent, 20px 70px 0 transparent, 30px 70px 0 transparent, 40px 70px 0 #32382e, 50px 70px 0 #c9e1b9, 60px 70px 0 #7e8d74, 70px 70px 0 #c9e1b9, 80px 70px 0 #7e8d74, 90px 70px 0 #c9e1b9, 100px 70px 0 #7e8d74, 110px 70px 0 #32382e, 120px 70px 0 transparent, 130px 70px 0 transparent, 140px 70px 0 transparent, 10px 80px 0 transparent, 20px 80px 0 transparent, 30px 80px 0 #32382e, 40px 80px 0 #c9e1b9, 50px 80px 0 #7e8d74, 60px 80px 0 #c9e1b9, 70px 80px 0 #7e8d74, 80px 80px 0 #c9e1b9, 90px 80px 0 #7e8d74, 100px 80px 0 #c9e1b9, 110px 80px 0 #c9e1b9, 120px 80px 0 #32382e, 130px 80px 0 transparent, 140px 80px 0 transparent, 10px 90px 0 transparent, 20px 90px 0 #32382e, 30px 90px 0 #c9e1b9, 40px 90px 0 #7e8d74, 50px 90px 0 #c9e1b9, 60px 90px 0 #7e8d74, 70px 90px 0 #c9e1b9, 80px 90px 0 #7e8d74, 90px 90px 0 #c9e1b9, 100px 90px 0 #c9e1b9, 110px 90px 0 #7e8d74, 120px 90px 0 #c9e1b9, 130px 90px 0 #32382e, 140px 90px 0 transparent, 10px 100px 0 #32382e, 20px 100px 0 #c9e1b9, 30px 100px 0 #c9e1b9, 40px 100px 0 #7e8d74, 50px 100px 0 #c9e1b9, 60px 100px 0 #7e8d74, 70px 100px 0 #c9e1b9, 80px 100px 0 #7e8d74, 90px 100px 0 #c9e1b9, 100px 100px 0 #7e8d74, 110px 100px 0 #c9e1b9, 120px 100px 0 #c9e1b9, 130px 100px 0 #c9e1b9, 140px 100px 0 #32382e, 10px 110px 0 #32382e, 20px 110px 0 #c9e1b9, 30px 110px 0 #c9e1b9, 40px 110px 0 #7e8d74, 50px 110px 0 #c9e1b9, 60px 110px 0 #7e8d74, 70px 110px 0 #c9e1b9, 80px 110px 0 #7e8d74, 90px 110px 0 #c9e1b9, 100px 110px 0 #7e8d74, 110px 110px 0 #c9e1b9, 120px 110px 0 #c9e1b9, 130px 110px 0 #c9e1b9, 140px 110px 0 #32382e, 10px 120px 0 transparent, 20px 120px 0 #32382e, 30px 120px 0 #c9e1b9, 40px 120px 0 #c9e1b9, 50px 120px 0 #7e8d74, 60px 120px 0 #c9e1b9, 70px 120px 0 #7e8d74, 80px 120px 0 #c9e1b9, 90px 120px 0 #7e8d74, 100px 120px 0 #c9e1b9, 110px 120px 0 #7e8d74, 120px 120px 0 #c9e1b9, 130px 120px 0 #32382e, 140px 120px 0 transparent, 10px 130px 0 transparent, 20px 130px 0 transparent, 30px 130px 0 #32382e, 40px 130px 0 #c9e1b9, 50px 130px 0 #c9e1b9, 60px 130px 0 #7e8d74, 70px 130px 0 #c9e1b9, 80px 130px 0 #7e8d74, 90px 130px 0 #c9e1b9, 100px 130px 0 #7e8d74, 110px 130px 0 #c9e1b9, 120px 130px 0 #32382e, 130px 130px 0 transparent, 140px 130px 0 transparent, 10px 140px 0 transparent, 20px 140px 0 transparent, 30px 140px 0 transparent, 40px 140px 0 #32382e, 50px 140px 0 #32382e, 60px 140px 0 #32382e, 70px 140px 0 #32382e, 80px 140px 0 #32382e, 90px 140px 0 #32382e, 100px 140px 0 #32382e, 110px 140px 0 #32382e, 120px 140px 0 transparent, 130px 140px 0 transparent, 140px 140px 0 transparent;
+          box-shadow: 10px 10px 0 transparent, 20px 10px 0 transparent, 30px 10px 0 transparent, 40px 10px 0 transparent, 50px 10px 0 transparent, 60px 10px 0 transparent, 70px 10px 0 #32382e, 80px 10px 0 #32382e, 90px 10px 0 transparent, 100px 10px 0 transparent, 110px 10px 0 transparent, 120px 10px 0 transparent, 130px 10px 0 transparent, 140px 10px 0 transparent, 10px 20px 0 transparent, 20px 20px 0 transparent, 30px 20px 0 transparent, 40px 20px 0 transparent, 50px 20px 0 transparent, 60px 20px 0 #32382e, 70px 20px 0 #c9e1b9, 80px 20px 0 #c9e1b9, 90px 20px 0 #32382e, 100px 20px 0 transparent, 110px 20px 0 transparent, 120px 20px 0 transparent, 130px 20px 0 transparent, 140px 20px 0 transparent, 10px 30px 0 transparent, 20px 30px 0 transparent, 30px 30px 0 transparent, 40px 30px 0 transparent, 50px 30px 0 transparent, 60px 30px 0 transparent, 70px 30px 0 #32382e, 80px 30px 0 #32382e, 90px 30px 0 transparent, 100px 30px 0 transparent, 110px 30px 0 transparent, 120px 30px 0 transparent, 130px 30px 0 transparent, 140px 30px 0 transparent, 10px 40px 0 transparent, 20px 40px 0 transparent, 30px 40px 0 transparent, 40px 40px 0 transparent, 50px 40px 0 transparent, 60px 40px 0 transparent, 70px 40px 0 #32382e, 80px 40px 0 #32382e, 90px 40px 0 transparent, 100px 40px 0 transparent, 110px 40px 0 transparent, 120px 40px 0 transparent, 130px 40px 0 transparent, 140px 40px 0 transparent, 10px 50px 0 transparent, 20px 50px 0 transparent, 30px 50px 0 transparent, 40px 50px 0 transparent, 50px 50px 0 transparent, 60px 50px 0 #32382e, 70px 50px 0 #32382e, 80px 50px 0 #32382e, 90px 50px 0 #32382e, 100px 50px 0 transparent, 110px 50px 0 transparent, 120px 50px 0 transparent, 130px 50px 0 transparent, 140px 50px 0 transparent, 10px 60px 0 transparent, 20px 60px 0 transparent, 30px 60px 0 transparent, 40px 60px 0 transparent, 50px 60px 0 #32382e, 60px 60px 0 #7e8d74, 70px 60px 0 #c9e1b9, 80px 60px 0 #7e8d74, 90px 60px 0 #c9e1b9, 100px 60px 0 #32382e, 110px 60px 0 transparent, 120px 60px 0 transparent, 130px 60px 0 transparent, 140px 60px 0 transparent, 10px 70px 0 transparent, 20px 70px 0 transparent, 30px 70px 0 transparent, 40px 70px 0 #32382e, 50px 70px 0 #c9e1b9, 60px 70px 0 #7e8d74, 70px 70px 0 #c9e1b9, 80px 70px 0 #7e8d74, 90px 70px 0 #c9e1b9, 100px 70px 0 #7e8d74, 110px 70px 0 #32382e, 120px 70px 0 transparent, 130px 70px 0 transparent, 140px 70px 0 transparent, 10px 80px 0 transparent, 20px 80px 0 transparent, 30px 80px 0 #32382e, 40px 80px 0 #c9e1b9, 50px 80px 0 #7e8d74, 60px 80px 0 #c9e1b9, 70px 80px 0 #7e8d74, 80px 80px 0 #c9e1b9, 90px 80px 0 #7e8d74, 100px 80px 0 #c9e1b9, 110px 80px 0 #c9e1b9, 120px 80px 0 #32382e, 130px 80px 0 transparent, 140px 80px 0 transparent, 10px 90px 0 transparent, 20px 90px 0 #32382e, 30px 90px 0 #c9e1b9, 40px 90px 0 #7e8d74, 50px 90px 0 #c9e1b9, 60px 90px 0 #7e8d74, 70px 90px 0 #c9e1b9, 80px 90px 0 #7e8d74, 90px 90px 0 #c9e1b9, 100px 90px 0 #c9e1b9, 110px 90px 0 #7e8d74, 120px 90px 0 #c9e1b9, 130px 90px 0 #32382e, 140px 90px 0 transparent, 10px 100px 0 #32382e, 20px 100px 0 #c9e1b9, 30px 100px 0 #c9e1b9, 40px 100px 0 #7e8d74, 50px 100px 0 #c9e1b9, 60px 100px 0 #7e8d74, 70px 100px 0 #c9e1b9, 80px 100px 0 #7e8d74, 90px 100px 0 #c9e1b9, 100px 100px 0 #7e8d74, 110px 100px 0 #c9e1b9, 120px 100px 0 #c9e1b9, 130px 100px 0 #c9e1b9, 140px 100px 0 #32382e, 10px 110px 0 #32382e, 20px 110px 0 #c9e1b9, 30px 110px 0 #c9e1b9, 40px 110px 0 #7e8d74, 50px 110px 0 #c9e1b9, 60px 110px 0 #7e8d74, 70px 110px 0 #c9e1b9, 80px 110px 0 #7e8d74, 90px 110px 0 #c9e1b9, 100px 110px 0 #7e8d74, 110px 110px 0 #c9e1b9, 120px 110px 0 #c9e1b9, 130px 110px 0 #c9e1b9, 140px 110px 0 #32382e, 10px 120px 0 transparent, 20px 120px 0 #32382e, 30px 120px 0 #c9e1b9, 40px 120px 0 #c9e1b9, 50px 120px 0 #7e8d74, 60px 120px 0 #c9e1b9, 70px 120px 0 #7e8d74, 80px 120px 0 #c9e1b9, 90px 120px 0 #7e8d74, 100px 120px 0 #c9e1b9, 110px 120px 0 #7e8d74, 120px 120px 0 #c9e1b9, 130px 120px 0 #32382e, 140px 120px 0 transparent, 10px 130px 0 transparent, 20px 130px 0 transparent, 30px 130px 0 #32382e, 40px 130px 0 #c9e1b9, 50px 130px 0 #c9e1b9, 60px 130px 0 #7e8d74, 70px 130px 0 #c9e1b9, 80px 130px 0 #7e8d74, 90px 130px 0 #c9e1b9, 100px 130px 0 #7e8d74, 110px 130px 0 #c9e1b9, 120px 130px 0 #32382e, 130px 130px 0 transparent, 140px 130px 0 transparent, 10px 140px 0 transparent, 20px 140px 0 transparent, 30px 140px 0 transparent, 40px 140px 0 #32382e, 50px 140px 0 #32382e, 60px 140px 0 #32382e, 70px 140px 0 #32382e, 80px 140px 0 #32382e, 90px 140px 0 #32382e, 100px 140px 0 #32382e, 110px 140px 0 #32382e, 120px 140px 0 transparent, 130px 140px 0 transparent, 140px 140px 0 transparent;
+}
+
+.screenMoskvaInner::before {
+  content: '';
+  width: 100%;
+  background: #C9E1B9;
+  height: 2px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 4px;
+}
+
+.screenMoskvaInner::after {
+  content: '';
+  width: 100%;
+  background: #7E8D74;
+  height: 2px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+
+.screenBottom {
+  background: #E3FED1;
+  height: 32px;
+  width: calc(100% - 6px);
+  margin: 3px auto;
+  padding-top: 23px;
+}
+
+.screenBottom p {
+  text-align: center;
+  font-size: 12px;
+  -webkit-animation: blink 1.5s ease-inOut infinite alternate;
+          animation: blink 1.5s ease-inOut infinite alternate;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.gameboy {
+  position: relative;
+  display: block;
+  margin: 20px auto;
+  width: 422px;
+  height: 697px;
+  background: #eee;
+  border-radius: 10px 10px 60px 10px;
+  -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.gameboy:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 31px;
+  border-bottom: 4px solid #e0e0e0;
+}
+
+.gameboy:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 334px;
+  height: 31px;
+  border-left: 4px solid #e0e0e0;
+  border-right: 4px solid #e0e0e0;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.gameboy .screenCont {
+  position: relative;
+  top: 60px;
+  left: 40px;
+  width: 342px;
+  height: 272px;
+  margin-bottom: 58px;
+  background-color: #777;
+  border-radius: 13px 13px 50px 13px;
+}
+
+.gameboy .screenCont .screen::before {
+  content: '';
+  width: 220px;
+  height: 9px;
+  background: #E3FED1;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  right: 60px;
+  margin: auto;
+  z-index: 100;
+}
+
+.gameboy .screenCont .screen::after {
+  content: '';
+  width: 220px;
+  height: 12px;
+  background: #E3FED1;
+  position: absolute;
+  left: 3px;
+  bottom: 2px;
+  right: 60px;
+  margin: auto;
+  z-index: 100;
+}
+
+.gameboy .screenCont .screen {
+  position: relative;
+  top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #E3FED1;
+  width: 225px;
+  height: 205px;
+  -webkit-box-shadow: inset 3px 3px rgba(0, 0, 0, 0.15);
+          box-shadow: inset 3px 3px rgba(0, 0, 0, 0.15);
+}
+
+.gameboy .screenCont .screen .header {
+  position: relative;
+  top: -30px;
+  width: 100%;
+  height: 30px;
+  padding-top: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: right;
+  font-size: 10px;
+  font-family: sans-serif;
+  color: #b3b3b3;
+}
+
+.gameboy .screenCont .screen .header:before {
+  content: "";
+  position: absolute;
+  left: -43px;
+  top: 12px;
+  width: 80px;
+  height: 3px;
+  background-color: #8b1d90;
+  -webkit-box-shadow: 0 6px 0 #283593;
+          box-shadow: 0 6px 0 #283593;
+}
+
+.gameboy .screenCont .screen .header:after {
+  content: "";
+  position: absolute;
+  right: -46px;
+  top: 12px;
+  width: 38px;
+  height: 3px;
+  background-color: #8b1d90;
+  -webkit-box-shadow: 0 6px 0 #283593;
+          box-shadow: 0 6px 0 #283593;
+}
+
+.gameboy .screenCont .screen .animatedText {
+  opacity: 0;
+  display: inline;
+  position: relative;
+  top: -26px;
+  left: 30%;
+  color: #8a891f;
+  font-size: 17px;
+  font-family: "Pretendo";
+  z-index: 10;
+}
+
+.gameboy .screenCont .screen .animatedText.end {
+  opacity: 1;
+  top: 50px;
+  -webkit-transition: top 3s linear;
+  transition: top 3s linear;
+}
+
+.gameboy .screenCont .screen .animatedText .copy {
+  position: relative;
+  display: inline;
+  top: -2px;
+  margin-left: 2px;
+  font-size: 15px;
+  font-family: monospace;
+}
+
+.gameboy .screenCont .power {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 100px;
+  left: 20px;
+  border-radius: 100%;
+  background-color: #b98181;
+  -webkit-transition: background-color 300ms linear;
+  transition: background-color 300ms linear;
+}
+
+.gameboy .screenCont .power:before {
+  content: "BATTERY";
+  position: relative;
+  top: 18px;
+  left: -10px;
+  font-size: 8px;
+  font-family: sans-serif;
+  color: #b3b3b3;
+}
+
+.gameboy .screenCont .power.powerOn {
+  background-color: #f00;
+  -webkit-box-shadow: 0 0 3px 1px #ef5350;
+          box-shadow: 0 0 3px 1px #ef5350;
+}
+
+.gameboy .controlsCont {
+  display: block;
+  position: relative;
+  margin-top: 90px;
+}
+
+.gameboy .controlsCont .btnDirection {
+  position: relative;
+  margin-left: 40px;
+  top: 60px;
+}
+
+.gameboy .controlsCont .btnDirection:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 30px;
+  left: 30px;
+  width: 30px;
+  height: 30px;
+  background-color: #353535;
+  border-radius: 100%;
+}
+
+.gameboy .controlsCont .btnDirection .vertical,
+.gameboy .controlsCont .btnDirection .horizontal {
+  position: absolute;
+  left: 30px;
+  width: 30px;
+  height: 90px;
+  background: #444;
+  border-radius: 5px;
+}
+
+.gameboy .controlsCont .btnDirection .vertical:before,
+.gameboy .controlsCont .btnDirection .horizontal:before {
+  content: "";
+  position: relative;
+  top: 99px;
+  left: 8px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #dedede;
+}
+
+.gameboy .controlsCont .btnDirection .vertical:after,
+.gameboy .controlsCont .btnDirection .horizontal:after {
+  content: "";
+  position: relative;
+  top: -27px;
+  left: -5.6px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #dedede;
+}
+
+.gameboy .controlsCont .btnDirection .horizontal {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.gameboy .controlsCont .btnAB {
+  position: absolute;
+  top: 72px;
+  left: 252px;
+  width: 130px;
+  height: 60px;
+  background: #dfdfdf;
+  border-radius: 30px;
+  -webkit-transform: rotate(-25deg);
+}
+
+.gameboy .controlsCont .btnAB:after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  width: 44px;
+  height: 44px;
+  background: #a93671;
+  -webkit-box-shadow: 68px 0 #a93671;
+          box-shadow: 68px 0 #a93671;
+  border-radius: 100%;
+  -webkit-transform: rotate(180deg);
+}
+
+.gameboy .controlsCont .btnStartSelect {
+  position: absolute;
+  top: 205px;
+  left: 140px;
+  height: 12px;
+  width: 60px;
+  background: #999;
+  border-radius: 10px;
+  -webkit-transform: rotate(-25deg);
+  -webkit-box-shadow: 57px 27px #999, 0 0 0 5px #dfdfdf, 57px 27px 0 5px #dfdfdf;
+          box-shadow: 57px 27px #999, 0 0 0 5px #dfdfdf, 57px 27px 0 5px #dfdfdf;
+}
+
+.gameboy .speakers {
+  content: "";
+  position: relative;
+  height: 70px;
+  width: 8px;
+  top: 260px;
+  left: 300px;
+  background: #ddd;
+  border-radius: 4px;
+  -webkit-transform: rotate(-25deg);
+  -webkit-box-shadow: 20px 0 #ddd, 40px 0 #ddd, 60px 0 #ddd, 80px 0 #ddd, 100px 0 #ddd;
+          box-shadow: 20px 0 #ddd, 40px 0 #ddd, 60px 0 #ddd, 80px 0 #ddd, 100px 0 #ddd;
+}
+
+.phones {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  padding: 3px 5px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #dadada;
+  background-color: #e8e8e8;
+  font-size: 8px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  border-radius: 30px;
+}
+
+.phones:before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 5px;
+  bottom: -4px;
+  background-color: #e8e8e8;
+  left: 9px;
+}
+
+.phones:after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 5px;
+  bottom: -4px;
+  left: 12px;
+  background-color: #ddd;
+  -webkit-box-shadow: 5px 0 #ddd;
+          box-shadow: 5px 0 #ddd;
+  border-radius: 4px 4px 0 0;
+}
+
+.onOff {
+  position: absolute;
+  top: 2px;
+  left: 20%;
+  padding: 3px 5px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #dadada;
+  background-color: #e8e8e8;
+  font-size: 8px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  border-radius: 30px;
+}
+
+.onOff:before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 5px;
+  top: -2px;
+  background-color: #e8e8e8;
+  left: 6px;
+}
+
+.onOff:after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 5px;
+  top: -2px;
+  left: 9px;
+  background-color: #ddd;
+  -webkit-box-shadow: 5px 0 #ddd;
+          box-shadow: 5px 0 #ddd;
+  border-radius: 0 0 3px 3px;
+}
+
+.gh-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+/*# sourceMappingURL=gameboy2.css.map */
