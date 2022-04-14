@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  next:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    volumes:
+      - .:/app:cached
+    tty: true
+    ports:
+      - 3434:3000
+volumes:
+  app:
+    name: app
