@@ -38,6 +38,8 @@ const LOCK_BLOCK = 2
 const CLEAR_BLOCK = 3
 /** 壁 */
 const WALL = 9
+/** ブロックの種類の数 */
+const BLOCK_TYPE_NUMBER = 7
 
 // エフェクト
 /** エフェクト時のチカチカする回数 */
@@ -232,7 +234,7 @@ const createBlock = () => {
   if (mode == EFFECT) return
   x = sx = Math.floor(BLOCK_COLS / 3);
   y = sy = 0;
-  blockType = Math.floor(Math.random() * 7);
+  blockType = Math.floor(Math.random() * BLOCK_TYPE_NUMBER);
   // ブロックをコピー
   for (let i = 0; i < 4; i++) {
     for (let j = 0; j < 4; j++) {
