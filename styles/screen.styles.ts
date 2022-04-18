@@ -36,7 +36,7 @@ export const screen = {
     height: '100%',
     'h1': {
       textAlign: 'center',
-      marginTop: '9px',
+      marginTop: '-2px',
       fontSize: '40px',
     },
     'small': {
