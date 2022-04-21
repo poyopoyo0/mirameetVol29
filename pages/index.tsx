@@ -43,7 +43,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div css={screen.screenBottom}>
-                  <p>PRESS  "ENTER"  START</p>
+                  <p>PRESS  ENTER  START</p>
                 </div>
               </div>
               <div css={gameboy.screenHeader}>DOT MATRIX WITH STEREO SOUND</div>
