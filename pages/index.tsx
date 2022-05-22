@@ -1,7 +1,7 @@
 import { common } from '../styles/common.styles'
 import { screen } from '../styles/screen.styles'
 import { gameboy, font } from '../styles/gameboy.styles'
-import { css, Global } from '@emotion/react'
+import { Global } from '@emotion/react'
 import { useEffect } from 'react'
 import { init, keyDownFunc, gameStart } from '../utils/tetris'
 
@@ -47,10 +47,6 @@ export default function Home() {
                 </div>
               </div>
               <div css={gameboy.screenHeader}>DOT MATRIX WITH STEREO SOUND</div>
-              <div css={gameboy.animatedText}>
-                Nintendo
-                <div css={gameboy.animatedTextCopy}>®</div>
-              </div>
             </div>
           </div>
           <div css={gameboy.controlsCont}>
